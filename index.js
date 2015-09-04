@@ -46,7 +46,7 @@ module.exports = function(validate) {
                         } else {
                             instance.save(function(err, entry){
                                 if(err){
-                                    res.status(400).end(err.message);
+                                    res.status(500).end(err.message);
                                 } else {
                                     res.status(200).json(entry._doc);
                                 }
@@ -77,7 +77,7 @@ module.exports = function(validate) {
                     } else {
                         cb(null, ctx);
                     }
-                }, function () {
+                }, function (err) {
                     res.status(500).end(err.toString());
                 });
             });
@@ -109,17 +109,23 @@ module.exports = function(validate) {
                             req: req
                         }).then(function (isValid) {
                             if(!isValid){
-                                return Q.reject("baucis-security-plugin has blocked access");
+                                var err = new Error("baucis-security-plugin has blocked access");
+                                err.statusCode = 403;
+                                return Q.reject(err);
                             } else {
                                 return Q();
                             }
-                        });
+                        }, function (reason) {
+                            var err = new Error(reason.toString());
+                            err.statusCode = 500;
+                            return Q.reject(err);
+                        })
                     });
 
                     Q.all(promises).then(function () {
                         next();
                     }, function (err) {
-                        res.status(403).end(err.toString());
+                        res.status(err.statusCode).end(err.toString());
                     });
                 }
             });
