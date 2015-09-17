@@ -1,4 +1,4 @@
-# Bauic Security Plugin
+# Baucis Security Plugin
 This plugin adds a security middleware to baucis.
 
 Installation
