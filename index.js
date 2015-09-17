@@ -4,7 +4,6 @@ var Q = require('q');
 
 
 /**
- *
  * @param {function} validate Is called with the model instance and a context object that contains several properties
  * that might be helpful to decide if it is allowed to access this entry:
  *  - req: express request object
