@@ -1,6 +1,16 @@
 # Bauic Security Plugin
-
 This plugin adds a security middleware to baucis.
+
+Installation
+-------------
+
+```
+npm install baucis-security-plugin
+```
+
+Usage
+---------
+
 All you need to do is to overhand a function that allows this plugin to decide if the current instance is allowed
 to be accessed. You can do this, for example with the mongoose-user-resolver-plugin.
 This plugin adds a method getUserId to mongoose models. By comparing the current user and the owner 
