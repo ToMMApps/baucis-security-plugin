@@ -14,7 +14,7 @@
     "url": "https://github.com/ToMMApps/baucis-security-plugin.git"
   },
   "author": "Henning Gerrits",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "baucis": "^1.6.2",
     "q": "^1.4.1"
