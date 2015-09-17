@@ -11,7 +11,7 @@ var Q = require('q');
  */
 module.exports = function(validate) {
 
-    if(!util.isFunction(validate)){
+    if(typeof validate !== 'function'){
         throw new TypeError("first arg must be a function");
     }
 
