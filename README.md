@@ -32,6 +32,7 @@ security(function (instance, ctx) {
 
 This means that a user can not modify entries that belong to a different user.
 
-For coverage report run "npm run cover" and npm test for all mocha tests.
+Code-Quality
+-------------
 
-Written by Henning Gerrits, ToMM Apps GmbH
+For coverage report run "npm run cover" and npm test for all mocha tests.
