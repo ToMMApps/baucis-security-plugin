@@ -36,3 +36,15 @@ security(function (instance, ctx) {
 ```
 
 This means that a user can not modify entries that belong to a different user.
+
+How it works
+-----------
+
+*GET* and *DELETE* requests are handled the same way. In both cases the method validate is called for each queried instance. If any of those calls resolve to false, the whole request is forbidden.
+This plugin does not filter the response. Instead it blocks the whole request. To solve this problem, the request must be more specific.
+
+When doing a *POST* request a new instance is created and the mongoose validate function will be called. After that, the overhanded validate function is called. If any of those actions fail, the request fails.
+
+During a *PUT* request this plugin calls the overhanded validate function on the updated instance. As always the request fails if validate resolves to false. In this case the instance will not be modified.
+
+
