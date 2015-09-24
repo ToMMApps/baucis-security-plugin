@@ -1,6 +1,11 @@
 # Baucis Security Plugin
 This plugin adds a security middleware to baucis.
 
+![BuildStatus](http://jenkins.tomm-apps.de/buildStatus/icon?job=baucis-security-plugin)
+![Test](http://jenkins.tomm-apps.de:3434/badge/baucis-security-plugin/test)
+![LastBuild](http://jenkins.tomm-apps.de:3434/badge/baucis-security-plugin/lastbuild)
+![CodeCoverageInJenkins](http://jenkins.tomm-apps.de:3434/badge/baucis-security-plugin/coverage)
+
 Installation
 -------------
 
@@ -31,12 +36,3 @@ security(function (instance, ctx) {
 ```
 
 This means that a user can not modify entries that belong to a different user.
-
-Code-Quality
--------------
-
-Current Jenkins report for this project:
-- ![BuildStatus](http://jenkins.tomm-apps.de/buildStatus/icon?job=baucis-security-plugin)
-- ![Test](http://jenkins.tomm-apps.de:3434/badge/baucis-security-plugin/test)
-- ![LastBuild](http://jenkins.tomm-apps.de:3434/badge/baucis-security-plugin/lastbuild)
-- ![CodeCoverageInJenkins](http://jenkins.tomm-apps.de:3434/badge/baucis-security-plugin/coverage)
